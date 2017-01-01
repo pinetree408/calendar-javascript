@@ -22,6 +22,37 @@ function makeCalendarHeader() {
   return calendarHeader;
 }
 
+function makeCalendarContent(item) {
+  var result = "";
+  if (item != null) {
+    var image = "";
+    switch (item.emotion) {
+      case 1:
+        image = '<img src="/static/img/emotion-2.png">';
+        break;
+      case 2:
+        image = '<img src="/static/img/emotion-1.png">';
+        break;
+      case 3:
+        image = '<img src="/static/img/emotion0.png">';
+        break;
+      case 4:
+        image = '<img src="/static/img/emotion1.png">';
+        break;
+      case 5:
+        image = '<img src="/static/img/emotion2.png">';
+        break;
+      default:
+        image = "";
+    }
+    result = '<a href="/diary/update/' + item.id + '">' + image + '</a>';
+  } else {
+    result = '<a href="">Nothing</a>';
+    //result = '<a href="/diary/create/' + year + '/' + (month + 1) + '/'+ date +'">Nothing</a>';
+  }
+  return result;
+}
+
 function makeCalendarBody(items) {
   var calendarBody = '';
   var blankDay = '<td></td>'
@@ -53,11 +84,11 @@ function makeCalendarBody(items) {
       var item = JSON.parse(item);
       var created = item.created_at.split("-");
       if(Number(created[2]) === date){
-        content = '<a href="/diary/update/' + item.id + '">' + item.text + '</a>';
+        content = makeCalendarContent(item);
       }
     });
     if (content === 'Nothing'){
-      content = '<a href="/diary/create/' + year + '/' + (month + 1) + '/'+ date +'">' + content + '</a>';
+      content = makeCalendarContent(null);
     }
     calendarBody += '<li>' + content + '</li>';
     calendarBody += '</ul></td>';
