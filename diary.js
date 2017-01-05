@@ -45,7 +45,7 @@ function makeCalendarContent(item) {
       default:
         image = "";
     }
-    result = '<a href="/diary/update/' + item.id + '">' + image + '</a>';
+    result = '<a href="/calendar/emotion/' + item.id + '">' + image + '</a>';
   } else {
     result = '<a href="">Nothing</a>';
     //result = '<a href="/diary/create/' + year + '/' + (month + 1) + '/'+ date +'">Nothing</a>';
