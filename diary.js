@@ -28,19 +28,19 @@ function makeCalendarContent(item) {
     var image = "";
     switch (item.emotion) {
       case 1:
-        image = '<img src="/static/img/emotion-2.png">';
+        image = '<img src="/static/img/calendar/emotion-2.png">';
         break;
       case 2:
-        image = '<img src="/static/img/emotion-1.png">';
+        image = '<img src="/static/img/calendar/emotion-1.png">';
         break;
       case 3:
-        image = '<img src="/static/img/emotion0.png">';
+        image = '<img src="/static/img/calendar/emotion0.png">';
         break;
       case 4:
-        image = '<img src="/static/img/emotion1.png">';
+        image = '<img src="/static/img/calendar/emotion1.png">';
         break;
       case 5:
-        image = '<img src="/static/img/emotion2.png">';
+        image = '<img src="/static/img/calendaremotion2.png">';
         break;
       default:
         image = "";
